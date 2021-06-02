@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pacman</title>
+    <style>
+        .pacman {
+            background-image: url('Picture/pacman.jpg');
+            display: inline-block;
+        }
+
+        .wall {
+            background-image: url('Picture/purplewall.jpg');
+            display: inline-block;
+        }
+
+        .coin {
+            background-image: url('Picture/coinn (2).jpg');
+            display: inline-block;
+        }
+
+        .ground {
+
+            background-image: url('Picture/ground.png');
+            display: inline-block;
+        }
+
+        .Blinky {
+            width: 50px;
+            height: 50px;
+            background-image: url('Picture/ghostred.jpg');
+            display: inline-block;
+        }
+
+        .Pinky {
+            width: 50px;
+            height: 50px;
+            background-image: url("Picture/ghostpink.jpg");
+            display: inline-block;
+        }
+
+        div {
+            width: 50px;
+            height: 50px;
+            margin: -2px;
+            vertical-align: top;
+            /*display: inline-block;*/
+        }
+        table {
+            margin: auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+        }
+        #pic1 {
+            background-image: url("Picture/gameMenuPacman.png");
+            width: 350px;
+            height: 468px;
+        }
+        button {
+            background-color: darkslateblue;
+            width: 300px;
+            height: 50px;
+            font-size: 30px;
+            color: yellow;
+            font-family: Jokerman;
+        }
+        #playbtn {
+            position: relative;
+            bottom: -210px;
+            left: 30px;
+        }
+        body{
+            background-image: url("Picture/BackgroundImagePacman.jpg");
+        }
+        #thegame {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+// Audio
+<audio id="bgMusic" src="Audio/intromusic.ogg" type="audio/mpeg"></audio>
+<audio id="pacmanEat" src="Audio/pacman_chomp.ogg" type="audio/mpeg"></audio>
+<audio id="pacmanDeath" src="Audio/pacman_death.ogg" type="audio/mpeg"></audio>
+<table  id="gameMenu">
+<tr>
+    <td id="pic1">
+    <div id="playbtn">
+        <button class="btn1"
+                onmouseout="originColor()"
+                onmouseover="changeColor()"
+                onclick="drawMap();setInterval(movePinky, 1000);setInterval(moveBlinky, 1000);playMusic()">
+            Play game
+        </button>
+    </div>
+</td>
+</tr>
+</table>
+<span id="theGame"></span>
+<script src="Javascript/Pacman.js"></script>
+</body>
+</html>
